@@ -1,30 +1,32 @@
-# 🏦 Bank Customer Churn Prediction Dashboard
+# 🏦 Bank Customer Churn Analytics Dashboard
 
-## 📌 Overview
-
-This project focuses on predicting customer churn in a banking system using Machine Learning techniques.
-
-The goal is to identify customers who are likely to leave the bank and provide insights that can help improve customer retention strategies.
-
-The project includes data analysis, preprocessing, model training, evaluation, and deployment through an interactive Streamlit dashboard.
-
+An interactive Business Intelligence dashboard that combines Machine Learning and Data Visualization to analyze customer churn and support business decision-making.
 
 ---
 
-## 🎯 Problem Statement
+# 📌 Project Overview
 
-Customer churn is a major challenge for banking institutions. Predicting which customers are likely to leave allows banks to take proactive actions and improve customer satisfaction.
+Customer churn is one of the biggest challenges facing banks, as losing existing customers directly impacts profitability.
 
-This project builds a classification model to predict whether a customer will exit the bank or remain.
+This project aims to analyze customer churn behavior, identify the most influential factors behind customer attrition, and provide an interactive dashboard that helps decision-makers explore customer behavior and predict churn risk.
 
+The dashboard combines exploratory data analysis, machine learning, and business intelligence into a single application.
 
 ---
 
-## 📂 Dataset
+# 🎯 Business Problem
 
-The project uses the **Bank Customer Churn Dataset (Churn_Modelling)**.
+Banks need to identify customers who are likely to leave before they actually churn.
 
-The dataset contains customer information such as:
+Instead of reacting after customers leave, this dashboard helps managers proactively identify high-risk customers and design targeted retention strategies.
+
+---
+
+# 📂 Dataset
+
+Dataset: **Churn_Modelling.csv**
+
+The dataset contains information about 10,000 bank customers, including:
 
 - Credit Score
 - Geography
@@ -37,152 +39,211 @@ The dataset contains customer information such as:
 - Active Membership
 - Estimated Salary
 
-The target variable is:
+Target Variable:
 
-- `Exited`
-    - 0 → Customer stays
-    - 1 → Customer leaves
-
+- **Exited**
+    - 0 → Customer Stays
+    - 1 → Customer Leaves
 
 ---
 
-## 🔄 Project Workflow
+# 🔄 Project Workflow
 
-The project follows these steps:
+## 1. Exploratory Data Analysis (EDA)
 
-### 1. Data Exploration (EDA)
+- Customer behavior analysis
+- Churn distribution
+- Feature relationships
+- Business insights
 
-- Understanding customer characteristics
-- Analyzing churn distribution
-- Studying relationships between features and customer exit behavior
+## 2. Data Preprocessing
 
+- Missing value verification
+- StandardScaler
+- OneHotEncoder
+- Feature transformation using ColumnTransformer
 
-### 2. Data Preprocessing
+## 3. Feature Engineering
 
-Applied preprocessing techniques:
+Created a new feature:
 
-- Feature scaling using `StandardScaler`
-- Categorical encoding using `OneHotEncoder`
+- BalancePerProduct
 
+to better represent customer balance relative to owned products.
 
-### 3. Feature Engineering
+## 4. Machine Learning
 
-Created an additional feature:
-
-- `BalancePerProduct`
-
-which represents the customer's balance relative to the number of products.
-
-
-### 4. Model Training
-
-Several machine learning algorithms were evaluated, including:
+Several classification models were evaluated:
 
 - Logistic Regression
 - Random Forest
 - XGBoost
 - LightGBM
 
+The best-performing model was selected based on evaluation metrics.
 
-### 5. Hyperparameter Optimization
+## 5. Model Deployment
 
-Hyperparameter tuning was performed to improve model performance.
-
-
-### 6. Model Deployment
-
-The final model was deployed using Streamlit to create an interactive prediction dashboard.
-
+The trained model was integrated into an interactive Dash application for business users.
 
 ---
 
-## 🤖 Final Model
+# 🤖 Machine Learning Pipeline
 
-The final selected model is:
+The following diagram summarizes the complete workflow of the project, starting from raw customer data and ending with business decision support through an interactive dashboard.
 
-**Random Forest Classifier**
-
-The model was integrated with a complete pipeline containing:
-
-- Data preprocessing
-- Feature transformation
-- Classification model
-
+![pipeline](screenshots/pipeline.png)
 
 ---
 
-## 📊 Dashboard Features
+# 📊 Dashboard Pages
 
-The Streamlit dashboard provides:
+## 📈 Overview
 
-### Customer Prediction
+- Business KPIs
+- Customer Churn Rate
+- Age Distribution
+- Product Analysis
+- Customer Activity
+
+![overviwe](screenshots/Overviwe.png)
+---
+
+## 💰 Balance Analysis
+
+- Balance Distribution
+- Customer Balance Segmentation
+- High-Value Customer Analysis
+![balance](screenshots/Balance.png)
+---
+
+## 🌍 Geography Analysis
+
+- Churn by Country
+- Regional Customer Comparison
+
+---
+
+## 👥 Customer Demographics
+
+- Age Analysis
+- Gender Analysis
+
+---
+
+## ⚠ Risk Segmentation
+
+- Customer Risk Categories
+- Business Risk Indicators
+
+---
+
+## 🤖 Customer Prediction
 
 Users can enter customer information and receive:
 
-- Churn prediction
-- Churn probability
+- Churn Prediction
+- Churn Probability
+- Risk Level
+![prediction](screenshots/Prediction.png)
+---
 
+# 📈 Key Business Insights
 
-### Customer Overview
+Some important findings include:
 
-The dashboard displays:
-
-- Total customers
-- Churn rate
-- Average customer age
-
+- Customers with higher balances tend to churn more frequently.
+- Inactive members have significantly higher churn rates.
+- Customers with only one product are more likely to leave.
+- Churn behavior varies across different countries.
+- Age is one of the strongest indicators of customer churn.
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠 Technologies Used
 
 - Python
 - Pandas
 - NumPy
-- Scikit-learn
-- Random Forest
-- Streamlit
+- Scikit-Learn
+- Dash
+- Plotly
+- Dash Bootstrap Components
 - Joblib
 - Matplotlib
 - Seaborn
 
-
 ---
 
-## 📁 Project Structure
-Bank-dashbourd/
-│
-├── app.py
-├── models/
-│ └── bank_churn_model.pkl
+# 📁 Project Structure
+
+```
+Bank-Customer-Churn-Dashboard/
 │
 ├── data/
-│ └── Churn_Modelling.csv
-│
+├── models/
+├── notebooks/
+├── Dashboard.py
 ├── requirements.txt
-│
-└── README.md
-
-
-
+├── README.md
+└── screenshots/
+```
 
 ---
 
-## ▶️ How to Run the Project
+# ▶️ Installation
 
-Install required libraries:
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Bank-Customer-Churn-Dashboard.git
+```
+
+Install the required libraries
 
 ```bash
 pip install -r requirements.txt
+```
 
-streamlit run app.py
+Run the dashboard
 
-📌 Results
+```bash
+python Dashboard.py
+```
 
-The developed model can successfully predict customer churn and provides an interactive interface for testing new customer cases.
+---
 
-The dashboard demonstrates the practical deployment of a machine learning model into a user-friendly application.
+# 📷 Dashboard Preview
 
-👩‍💻 Author
+Overview Dashboard
 
-Sondos Kayyali
+![Overview](screenshots/overview.png)
+
+---
+
+Balance Analysis
+
+![Balance](screenshots/balance.png)
+
+---
+
+Prediction Page
+
+![Prediction](screenshots/prediction.png)
+
+---
+
+# 🚀 Future Improvements
+
+- Deploy the dashboard online
+- Add user authentication
+- Real-time database integration
+- Model monitoring and retraining
+
+---
+
+# 👩‍💻 Author
+
+**Sondos Kayyali**
+
+Data Science & Artificial Intelligence Student
