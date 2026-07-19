@@ -106,7 +106,7 @@ The following diagram summarizes the complete workflow of the project, starting 
 - Product Analysis
 - Customer Activity
 
-![overviwe](screenshots/Overviwe.png)
+![overviwe](screenshots/overviwe.png)
 ---
 
 ## 💰 Balance Analysis
@@ -114,7 +114,7 @@ The following diagram summarizes the complete workflow of the project, starting 
 - Balance Distribution
 - Customer Balance Segmentation
 - High-Value Customer Analysis
-![balance](screenshots/Balance.png)
+![balance](screenshots/balance.png)
 ---
 
 ## 🌍 Geography Analysis
@@ -145,7 +145,7 @@ Users can enter customer information and receive:
 - Churn Prediction
 - Churn Probability
 - Risk Level
-![prediction](screenshots/Prediction.png)
+![prediction](screenshots/prediction.png)
 ---
 
 # 📈 Key Business Insights
